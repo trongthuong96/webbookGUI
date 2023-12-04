@@ -36,7 +36,16 @@ export function app(): express.Express {
         publicPath: browserDistFolder,
         providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
       })
-      .then((html) => res.send(html))
+      .then((html) => {
+
+        // Loại bỏ <transfer-state> tag
+        html = html.replace(
+          /<transfer-state(.*?)<\/transfer-state>/, 
+          '');
+  
+        res.send(html);
+      })
+      //.then((html) => res.send(html))
       .catch((err) => next(err));
   });
 
@@ -44,7 +53,7 @@ export function app(): express.Express {
 }
 
 function run(): void {
-  const port = process.env['PORT'] || 4000;
+  const port = process.env['PORT'] || 4200;
 
   // Start up the Node server
   const server = app();

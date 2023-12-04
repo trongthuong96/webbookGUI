@@ -1,0 +1,38 @@
+<header>
+
+    <div class="menu">
+      <a routerLink="/the-loai">Thể Loại</a>
+      <a routerLink="/danh-sach">Danh Sách</a>  
+    </div>
+  
+    <div class="search">
+      <input type="text" placeholder="Tìm kiếm truyện...">
+    </div>
+  
+    <div class="auth">
+      <a routerLink="/dang-nhap">Đăng Nhập</a>
+      <a routerLink="/dang-ky">Đăng Ký</a> 
+    </div>
+  
+  </header>
+  
+  <section class="main">
+  
+    <h2>Truyện Xem Nhiều</h2>
+    
+    <div class="books">
+      <!-- Danh sách truyện -->
+      <p>{{book?.title}}</p>
+    </div>
+  
+    <h2>Truyện Mới Cập Nhập</h2>
+  
+    <div class="books">
+      <!-- Danh sách truyện mới -->
+    </div>
+  
+  </section>
+  
+  <footer>
+    <p>Footer tùy chỉnh</p>
+  </footer>
